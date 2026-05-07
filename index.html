@@ -1,140 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Ucapan Selamat Tidur Romantis</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(to top, #0b0c10, #1f2833);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      opacity: 0;                /* awal transparan */
-      animation: fadeIn 3s ease forwards; /* efek fade-in */
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Bintang berkelip */
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      animation: twinkle 2s infinite alternate;
-    }
-    @keyframes twinkle {
-      from { opacity: 0.2; }
-      to { opacity: 1; }
-    }
-
-    /* Pesan romantis dengan glow */
-    #message {
-      font-size: 32px;
-      text-align: center;
-      white-space: pre-line;
-      border-right: 2px solid #fff;
-      overflow: hidden;
-      animation: typing 6s steps(40, end), blink 0.8s infinite;
-      text-shadow: 0 0 10px #ff6aa6, 0 0 20px #ff6aa6, 0 0 30px #ff6aa6;
-    }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-    /* Hati melayang */
-    .heart {
-      position: absolute;
-      color: #ff6aa6;
-      font-size: 20px;
-      animation: floatUp 5s linear forwards;
-      text-shadow: 0 0 5px #ff6aa6, 0 0 15px #ff6aa6;
-    }
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 1; }
-      to { transform: translateY(-100vh); opacity: 0; }
-    }
-
-    /* Tombol musik */
-    #playBtn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #ff6aa6;
-      border: none;
-      border-radius: 20px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 0 10px #ff6aa6, 0 0 20px #ff6aa6;
-      opacity: 0;
-      animation: fadeInBtn 4s ease forwards;
-      animation-delay: 2s; /* muncul setelah teks */
-    }
-    #playBtn:hover {
-      background: #ff85b5;
-      box-shadow: 0 0 15px #ff85b5, 0 0 30px #ff85b5;
-    }
-    @keyframes fadeInBtn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Selamat Ulang Tahun, Bro! 🎉</title>
+<style>
+  :root{
+    --bg1:#1a1033; --bg2:#2a1854; --gold:#ffcb52; --pink:#ff5dcd; --blue:#5dc8ff;
+    --text:#fff; --muted:#c9c2e0; --card:rgba(255,255,255,.06); --border:rgba(255,255,255,.15);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow-x:hidden}
+  body{
+    font-family:'Segoe UI',Inter,system-ui,sans-serif;color:var(--text);
+    background:
+      radial-gradient(ellipse at top,rgba(255,93,205,.35),transparent 60%),
+      radial-gradient(ellipse at bottom,rgba(93,200,255,.3),transparent 60%),
+      linear-gradient(135deg,var(--bg1),var(--bg2));
+    background-attachment:fixed;min-height:100vh;
+  }
+  main{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 24px;text-align:center;z-index:2}
+  .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 16px;border:1px solid var(--border);background:var(--card);border-radius:999px;backdrop-filter:blur(10px);font-size:14px;color:var(--muted);margin-bottom:20px}
+  h1{font-size:clamp(40px,8vw,84px);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+  .gradient{background:linear-gradient(135deg,var(--gold),var(--pink),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 3s linear infinite;display:block}
+  @keyframes shimmer{to{background-position:200% center}}
+  .name{display:block;margin-top:8px}
+  p.lead{margin:24px auto 0;max-width:560px;font-size:clamp(16px,2.5vw,20px);color:var(--muted);line-height:1.5}
+  .lead b{color:var(--gold)}
+  .cake-btn{margin-top:48px;background:var(--card);border:1px solid var(--border);border-radius:28px;padding:32px 48px;cursor:pointer;backdrop-filter:blur(20px);transition:.3s;box-shadow:0 0 60px rgba(255,203,82,.25),0 0 120px rgba(255,93,205,.2);color:#fff;font:inherit}
+  .cake-btn:hover{transform:scale(1.05)}
+  .cake{font-size:96px;display:block;filter:drop-shadow(0 0 24px rgba(255,203,82,.6));animation:glow 3s ease-in-out infinite}
+  @keyframes glow{50%{filter:drop-shadow(0 0 40px rgba(255,93,205,.8))}}
+  .cake-btn small{display:block;margin-top:12px;color:var(--muted);font-size:14px}
+  .wish{margin-top:40px;max-width:600px;padding:32px;background:var(--card);border:1px solid var(--border);border-radius:20px;backdrop-filter:blur(20px);opacity:0;transform:translateY(30px);transition:.6s}
+  .wish.show{opacity:1;transform:translateY(0)}
+  .wish h2{font-size:28px;margin-bottom:12px;background:linear-gradient(135deg,var(--gold),#ff8a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wish p{color:var(--muted);line-height:1.6}
+  .wish strong{color:#fff;display:block;margin-top:12px}
+  .grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:760px;width:100%}
+  .grid div{padding:24px;background:var(--card);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(10px);transition:.3s}
+  .grid div:hover{transform:translateY(-4px);border-color:var(--gold)}
+  .grid .ico{font-size:32px;margin-bottom:8px}
+  .grid h3{font-size:16px;margin-bottom:4px}
+  .grid p{font-size:13px;color:var(--muted)}
+  .music{position:fixed;top:16px;right:16px;z-index:50;display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--card);border:1px solid var(--border);border-radius:999px;backdrop-filter:blur(20px);color:#fff;cursor:pointer;font:inherit;font-size:14px;font-weight:500;transition:.2s}
+  .music:hover{transform:scale(1.05);border-color:var(--gold)}
+  .float{position:absolute;font-size:32px;animation:float 6s ease-in-out infinite;opacity:.7;z-index:1;pointer-events:none}
+  @keyframes float{50%{transform:translateY(-20px) rotate(8deg)}}
+  .footer{margin-top:48px;color:var(--muted);font-size:13px}
+  canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+  @media(max-width:600px){.cake-btn{padding:24px 32px}.cake{font-size:72px}}
+</style>
 </head>
 <body>
-  <div id="message">Selamat tidur, nona...\nSemoga mimpi indah menemanimu malam ini ❤️</div>
-  <script>
-    // Tambahkan bintang acak
-    for (let i = 0; i < 50; i++) {
-      const star = document.createElement("div");
-      star.className = "star";
-      star.style.top = Math.random() * window.innerHeight + "px";
-      star.style.left = Math.random() * window.innerWidth + "px";
-      star.style.animationDuration = (1 + Math.random()*2) + "s";
-      document.body.appendChild(star);
-    }
+<canvas id="confetti"></canvas>
 
-    // Fungsi hati melayang
-    function launchHearts() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.textContent = "❤";
-      heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.top = window.innerHeight + "px";
-      heart.style.fontSize = (16 + Math.random()*24) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 5000);
-    }
+<button class="music" id="musicBtn" aria-label="Putar lagu">
+  <span id="musicIcon">▶</span><span id="musicLabel">Putar Lagu</span>
+</button>
 
-    // Interval hati
-    setInterval(launchHearts, 800);
+<span class="float" style="top:80px;left:8%">✨</span>
+<span class="float" style="top:120px;right:10%;animation-delay:1s">🎉</span>
+<span class="float" style="bottom:160px;left:12%;animation-delay:2s">🎁</span>
+<span class="float" style="bottom:80px;right:8%;animation-delay:.5s">🎵</span>
 
-    // Kontrol musik
-    const music = document.getElementById("music");
-    const playBtn = document.getElementById("playBtn");
-    playBtn.addEventListener("click", () => {
-      if (music.paused) {
-        music.play();
-        playBtn.textContent = "Hentikan Musik";
-      } else {
-        music.pause();
-        playBtn.textContent = "Putar Musik Romantis";
-      }
-    });
-  </script>
+<main>
+  <div class="badge">✨ Hari Spesial • <span id="today"></span></div>
+  <h1>
+    <span class="gradient">Selamat Ulang Tahun</span>
+    <span class="name" id="nameOut">Andry T. Djami! 🎉</span>
+  </h1>
+  <p class="lead">
+    Hari ini umurmu udah <b id="ageOut">19 tahun</b>, bro!
+    Semoga makin sukses, makin sehat, dan makin keren di tahun ini. 🔥
+  </p>
+
+  <button class="cake-btn" id="cakeBtn">
+    <span class="cake">🎂</span>
+    <small id="cakeLabel">Klik untuk tiup lilin</small>
+  </button>
+
+  <div class="wish" id="wish">
+    <h2>Doa Terbaik Untukmu</h2>
+    <p>
+      Bro, makasih udah jadi sahabat yang selalu ada di setiap momen.
+      Semoga tahun ini dipenuhi rezeki yang melimpah, kesehatan yang prima,
+      dan mimpi-mimpi besarmu satu per satu jadi kenyataan.
+      <strong>Cheers buat petualangan baru! 🥂🚀</strong>
+    </p>
+  </div>
+
+  <div class="grid">
+    <div><div class="ico">🎁</div><h3>Sukses Selalu</h3><p>Karir & cita-cita lancar</p></div>
+    <div><div class="ico">💪</div><h3>Sehat Terus</h3><p>Jaga badan, jaga vibes</p></div>
+    <div><div class="ico">🥳</div><h3>Bahagia Selalu</h3><p>Dikelilingi orang baik</p></div>
+  </div>
+
+  <p class="footer">Made with 🔥 for the best bro</p>
+</main>
+
+<script>
+/* ====== Edit nama & umur di sini ====== */
+const FRIEND_NAME = "Andry T. Djami";
+const AGE = 19;
+/* ===================================== */
+
+document.getElementById('nameOut').textContent = FRIEND_NAME + "! 🎉";
+document.getElementById('ageOut').textContent = AGE + " tahun";
+document.getElementById('today').textContent = new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+
+/* ===== Confetti ===== */
+const cv = document.getElementById('confetti');
+const ctx = cv.getContext('2d');
+let W, H, pieces = [];
+const COLORS = ['#ffcb52','#ff5dcd','#5dc8ff','#7dffb1','#ff8a3d'];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+resize();addEventListener('resize',resize);
+function spawn(n=80){
+  pieces=Array.from({length:n},()=>({
+    x:Math.random()*W, y:Math.random()*-H, r:4+Math.random()*6,
+    c:COLORS[(Math.random()*COLORS.length)|0],
+    vy:1+Math.random()*2.5, vx:-1+Math.random()*2,
+    rot:Math.random()*Math.PI, vr:-.05+Math.random()*.1,
+    sq:Math.random()>.5
+  }));
+}
+spawn();
+function loop(){
+  ctx.clearRect(0,0,W,H);
+  pieces.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;
+    if(p.y>H+20){p.y=-20;p.x=Math.random()*W}
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;
+    if(p.sq) ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r);
+    else{ctx.beginPath();ctx.arc(0,0,p.r/2,0,Math.PI*2);ctx.fill()}
+    ctx.restore();
+  });
+  requestAnimationFrame(loop);
+}
+loop();
+
+/* ===== Happy Birthday melody (Web Audio) ===== */
+const NOTES={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392,A4:440,B4:493.88,C5:523.25,D5:587.33,E5:659.25,F5:698.46};
+const SONG=[['C4',.75],['C4',.25],['D4',1],['C4',1],['F4',1],['E4',2],
+            ['C4',.75],['C4',.25],['D4',1],['C4',1],['G4',1],['F4',2],
+            ['C4',.75],['C4',.25],['C5',1],['A4',1],['F4',1],['E4',1],['D4',2],
+            ['A4',.75],['A4',.25],['G4',1],['F4',1],['G4',1],['F4',2]];
+let actx, master, playing=false;
+function ensure(){
+  if(!actx){actx=new(window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=.3;master.connect(actx.destination)}
+  if(actx.state==='suspended')actx.resume();
+}
+function playSong(){
+  ensure();if(playing)return;playing=true;
+  setMusicUI(true);
+  const beat=.42;let t=actx.currentTime+.1;
+  for(const [n,b] of SONG){
+    const f=NOTES[n], dur=b*beat*.95;
+    const o=actx.createOscillator(),g=actx.createGain();
+    o.type='triangle';o.frequency.value=f;
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(.6,t+.02);
+    g.gain.linearRampToValueAtTime(.4,t+dur*.6);
+    g.gain.linearRampToValueAtTime(0,t+dur);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+dur+.05);
+    t+=b*beat;
+  }
+  setTimeout(()=>{playing=false;setMusicUI(false)},(t-actx.currentTime)*1000);
+}
+function stopSong(){
+  if(actx){actx.close();actx=null;master=null}
+  playing=false;setMusicUI(false);
+}
+function setMusicUI(on){
+  document.getElementById('musicIcon').textContent=on?'⏸':'▶';
+  document.getElementById('musicLabel').textContent=on?'Pause':'Putar Lagu';
+}
+document.getElementById('musicBtn').addEventListener('click',()=>{playing?stopSong():playSong()});
+
+/* ===== Cake interaction ===== */
+let blown=false;
+document.getElementById('cakeBtn').addEventListener('click',()=>{
+  if(!blown){
+    blown=true;
+    document.getElementById('cakeLabel').textContent='✨ Make a wish! ✨';
+    setTimeout(()=>document.getElementById('wish').classList.add('show'),400);
+    if(!playing)playSong();
+    spawn(160);
+  }
+});
+</script>
 </body>
 </html>
