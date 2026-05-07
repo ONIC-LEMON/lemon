@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ucapan Selamat Tidur Romantis</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #0b0c10, #1f2833);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      opacity: 0;                /* awal transparan */
+      animation: fadeIn 3s ease forwards; /* efek fade-in */
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Bintang berkelip */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* Pesan romantis dengan glow */
+    #message {
+      font-size: 32px;
+      text-align: center;
+      white-space: pre-line;
+      border-right: 2px solid #fff;
+      overflow: hidden;
+      animation: typing 6s steps(40, end), blink 0.8s infinite;
+      text-shadow: 0 0 10px #ff6aa6, 0 0 20px #ff6aa6, 0 0 30px #ff6aa6;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Hati melayang */
+    .heart {
+      position: absolute;
+      color: #ff6aa6;
+      font-size: 20px;
+      animation: floatUp 5s linear forwards;
+      text-shadow: 0 0 5px #ff6aa6, 0 0 15px #ff6aa6;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Tombol musik */
+    #playBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff6aa6;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff6aa6, 0 0 20px #ff6aa6;
+      opacity: 0;
+      animation: fadeInBtn 4s ease forwards;
+      animation-delay: 2s; /* muncul setelah teks */
+    }
+    #playBtn:hover {
+      background: #ff85b5;
+      box-shadow: 0 0 15px #ff85b5, 0 0 30px #ff85b5;
+    }
+    @keyframes fadeInBtn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Selamat tidur, nona...\nSemoga mimpi indah menemanimu malam ini ❤️</div>
+  <script>
+    // Tambahkan bintang acak
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.animationDuration = (1 + Math.random()*2) + "s";
+      document.body.appendChild(star);
+    }
+
+    // Fungsi hati melayang
+    function launchHearts() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight + "px";
+      heart.style.fontSize = (16 + Math.random()*24) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+
+    // Interval hati
+    setInterval(launchHearts, 800);
+
+    // Kontrol musik
+    const music = document.getElementById("music");
+    const playBtn = document.getElementById("playBtn");
+    playBtn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        playBtn.textContent = "Hentikan Musik";
+      } else {
+        music.pause();
+        playBtn.textContent = "Putar Musik Romantis";
+      }
+    });
+  </script>
+</body>
+</html>
